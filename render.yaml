@@ -1,0 +1,33 @@
+services:
+  - type: web
+    name: luxent-buffet-api
+    runtime: node
+    plan: free
+    region: oregon
+    rootDir: server
+    buildCommand: npm install && npm run migrate
+    startCommand: npm start
+    envVars:
+      - key: NODE_VERSION
+        value: "22"
+      - key: JWT_EXPIRES_IN
+        value: 2h
+      - key: DATABASE_URL
+        fromDatabase:
+          name: luxent-buffet-db
+          property: connectionString
+      - key: JWT_SECRET
+        generateValue: true
+      - key: ADMIN_EMAIL
+        sync: false
+      - key: ADMIN_PASSWORD
+        sync: false
+      - key: FRONTEND_URL
+        sync: false
+
+databases:
+  - name: luxent-buffet-db
+    databaseName: luxent_buffet
+    user: luxent
+    plan: free
+    region: oregon
