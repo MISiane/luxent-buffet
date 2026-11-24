@@ -1,6 +1,6 @@
-# Luxent Hotel — Holiday Buffet 2026
+# Le Monet Hotel — Holiday Buffet 2026
 
-Reservation form + admin dashboard for the Luxent Hotel Holiday Buffet 2026 early booking.
+Reservation form + admin dashboard for the Le Monet Hotel Holiday Buffet 2026 early booking.
 
 ## Structure
 - `client/` — Vite + React + Tailwind v4 frontend

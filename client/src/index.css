@@ -5,11 +5,13 @@
     Roboto, "Helvetica Neue", Arial, sans-serif;
 }
 
-/* Deep red textured background — layered radial gradients, no image asset. */
+/* Le Monet Hotel photo background with a dark overlay so the white logo text stays readable. */
 .holiday-bg {
-  background-color: #6b0f12;
+  background-color: #1a1a1a;
   background-image:
-    radial-gradient(circle at 20% 20%, rgba(255, 255, 255, 0.06) 0%, transparent 40%),
-    radial-gradient(circle at 80% 0%, rgba(255, 255, 255, 0.04) 0%, transparent 45%),
-    radial-gradient(circle at 60% 100%, rgba(0, 0, 0, 0.25) 0%, transparent 55%);
+    linear-gradient(rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.45)),
+    url("https://lemonethotel.ph/wp-content/uploads/2025/12/D-64f06a183d28e-1024x682.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
 }
