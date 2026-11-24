@@ -1,20 +1,42 @@
 import { STATUS_OPTIONS } from './StatusSelect.jsx'
 
-export default function StatusFilter({ value, onChange }) {
+const TABS = [{ value: '', label: 'All' }, ...STATUS_OPTIONS]
+
+export default function StatusFilter({ value, onChange, counts }) {
   return (
-    <select
-      value={value}
-      onChange={(e) => onChange(e.target.value)}
+    <div
+      role="group"
       aria-label="Filter by status"
-      className="rounded-md border border-gray-300 bg-white px-3 py-1.5 text-sm text-black
-        focus:outline-none focus:ring-2 focus:ring-red-700"
+      className="-mx-1 flex gap-1 overflow-x-auto px-1 pb-1"
     >
-      <option value="">All statuses</option>
-      {STATUS_OPTIONS.map((opt) => (
-        <option key={opt.value} value={opt.value}>
-          {opt.label}
-        </option>
-      ))}
-    </select>
+      {TABS.map((tab) => {
+        const active = value === tab.value
+        const count = tab.value === '' ? counts.all : counts[tab.value] ?? 0
+        return (
+          <button
+            key={tab.value || 'all'}
+            type="button"
+            onClick={() => onChange(tab.value)}
+            aria-pressed={active}
+            className={`whitespace-nowrap rounded-md px-3 py-1.5 text-sm font-medium
+              focus:outline-none focus-visible:ring-2 focus-visible:ring-brand focus-visible:ring-offset-2 focus-visible:ring-offset-paper
+              ${
+                active
+                  ? 'bg-brand text-white'
+                  : 'text-ink hover:bg-line/60'
+              }`}
+          >
+            {tab.label}
+            <span
+              className={`ml-1.5 tabular-nums ${
+                active ? 'text-white/80' : 'text-muted'
+              }`}
+            >
+              {count}
+            </span>
+          </button>
+        )
+      })}
+    </div>
   )
 }
