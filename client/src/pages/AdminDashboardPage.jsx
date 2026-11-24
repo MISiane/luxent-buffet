@@ -98,7 +98,7 @@ export default function AdminDashboardPage() {
       <header className="bg-white border-b border-gray-200">
         <div className="mx-auto max-w-6xl px-4 py-4 flex items-center justify-between">
           <div className="text-black font-semibold tracking-wide">
-            Luxent Hotel <span className="text-gray-400 font-normal">/ Admin</span>
+            Le Monet Hotel <span className="text-gray-400 font-normal">/ Admin</span>
           </div>
           <div className="flex items-center gap-3">
             <button

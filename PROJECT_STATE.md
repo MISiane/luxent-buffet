@@ -3,7 +3,7 @@
 _Last updated: Milestone 0_
 
 ## Project
-Luxent Hotel – Holiday Buffet 2026 Early Booking Form
+Le Monet Hotel – Holiday Buffet 2026 Early Booking Form
 Reservation form + Express API + PostgreSQL. JWT-protected admin dashboard (read-only + CSV export).
 
 ## Stack (locked)

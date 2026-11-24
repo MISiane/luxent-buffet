@@ -1,7 +1,7 @@
 {
   "name": "server",
   "version": "1.0.0",
-  "description": "Luxent Hotel Holiday Buffet 2026 API",
+  "description": "Le Monet Hotel Holiday Buffet 2026 API",
   "type": "module",
   "main": "src/index.js",
      "scripts": {
